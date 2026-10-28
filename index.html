@@ -300,5 +300,50 @@ setInterval(() => {
   setInterval(createFloatingLove, 650);
 })();
 </script>
+  <style>
+#musicButton {
+  position: fixed;
+  bottom: 20px;
+  right: 16px;
+  z-index: 10000;
+  padding: 13px 18px;
+  border: 1px solid #ffe6a0;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #ffe8a3, #c58a28);
+  color: #4b1730;
+  font-size: 14px;
+  font-weight: bold;
+  box-shadow: 0 0 18px #e6bd68;
+  cursor: pointer;
+}
+</style><audio id="romanticPiano" loop preload="none">
+  <source src="https://cdn.pixabay.com/audio/2022/10/25/audio_946b4f9f6e.mp3" type="audio/mpeg">
+</audio><button id="musicButton" type="button">🎹 Reproducir música</button>
+
+<script>
+(function () {
+  const music = document.getElementById("romanticPiano");
+  const button = document.getElementById("musicButton");
+
+  button.addEventListener("click", async function () {
+    if (music.paused) {
+      try {
+        await music.play();
+        button.textContent = "⏸️ Pausar música";
+      } catch (error) {
+        button.textContent = "🎵 Intentar reproducir";
+        alert("No se pudo cargar la música. Revisá tu conexión e intentá nuevamente.");
+      }
+    } else {
+      music.pause();
+      button.textContent = "🎹 Reproducir música";
+    }
+  });
+
+  music.addEventListener("ended", function () {
+    button.textContent = "🎹 Reproducir música";
+  });
+})();
+</script>
 </body>
 </html>
