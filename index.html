@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para mi princesa 💗</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Georgia, serif;
+  color: white;
+  text-align: center;
+  background:
+    linear-gradient(rgba(145, 10, 65, .62), rgba(90, 0, 45, .72)),
+    url("https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=1200&q=85")
+    center center / cover fixed;
+  background-color: #d93679;
+  overflow-x: hidden;
+}
+
+.contenido {
+  max-width: 520px;
+  margin: auto;
+  padding: 35px 18px;
+  position: relative;
+  z-index: 2;
+}
+
+h1 {
+  font-size: 38px;
+  color: #fff0f7;
+  text-shadow: 0 0 18px #ff69b4;
+}
+
+h2 {
+  color: #ffe3f0;
+}
+
+.subtitulo {
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+button {
+  background: #ff4f9a;
+  color: white;
+  border: 1px solid #ffc4df;
+  border-radius: 30px;
+  padding: 14px 22px;
+  margin: 10px 4px;
+  font-size: 16px;
+  box-shadow: 0 0 18px #ff69b4a0;
+  cursor: pointer;
+}
+
+button:active {
+  transform: scale(.96);
+}
+
+.tarjeta {
+  background: rgba(255, 190, 220, .22);
+  border: 1px solid rgba(255, 225, 240, .8);
+  border-radius: 24px;
+  padding: 22px 17px;
+  margin: 24px 0;
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+  box-shadow: 0 8px 25px #69002e55;
+}
+
+.oculto {
+  display: none;
+}
+
+.carta {
+  white-space: pre-line;
+  line-height: 1.85;
+  text-align: left;
+  font-size: 16px;
+}
+
+.corazon {
+  font-size: 76px;
+  display: inline-block;
+  animation: latido 1.2s infinite;
+  cursor: pointer;
+}
+
+@keyframes latido {
+  50% { transform: scale(1.16); }
+}
+
+.flotante {
+  position: fixed;
+  bottom: -45px;
+  pointer-events: none;
+  z-index: 1;
+  animation: subir 7s linear forwards;
+}
+
+@keyframes subir {
+  to {
+    transform: translateY(-115vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.pie {
+  margin-top: 32px;
+  font-style: italic;
+  color: #ffe1ef;
+}
+
+</style>
+</head>
+
+<body>
+
+<main class="contenido">
+
+  <div style="font-size:42px">♡ 👑 ♡</div>
+
+  <h1>Para mi princesa</h1>
+
+  <p class="subtitulo">
+    Hice algo especial para vos, mi Linda. 💗
+  </p>
+
+  <p>
+    No es un regalo que puedas tocar,
+    pero está hecho con muchísimo cariño.
+  </p>
+
+  <button onclick="abrirCarta()">
+    💌 Abrí tu sorpresa
+  </button>
+
+  <section id="cartaCaja" class="tarjeta oculto">
+    <h2>Una cartita para vos 💌</h2>
+    <div id="cartaTexto" class="carta"></div>
+  </section>
+
+  <section class="tarjeta">
+    <h2>Razones para sonreír 🌷</h2>
+    <p id="razon">Tengo algunas cositas lindas para recordarte. 💗</p>
+    <button onclick="otraRazon()">Descubrir una razón 💕</button>
+  </section>
+
+  <section class="tarjeta">
+    <h2>Un último regalito...</h2>
+    <p>Tocá el corazón, mi princesa.</p>
+
+    <div class="corazon" onclick="finalSorpresa()">❤️</div>
+
+    <p id="mensajeFinal" class="oculto">
+      Si pudiera elegir un lugar favorito en el mundo,
+      elegiría estar a tu lado.
+
+      Te quiero, mi princesa. 💗
+
+      Gracias por hacer tan bonito este comienzo. 🌹
+    </p>
+  </section>
+
+  <p class="pie">Hecho especialmente para vos, Linda. ♡</p>
+
+</main>
+
+<script>
+const carta = `Para mi princesa. 💗
+
+Linda, quizás llevemos poquito tiempo compartiendo esta historia, pero me hace muy feliz tenerte en mi vida.
+
+Quiero conocerte cada día un poquito más, compartir momentos bonitos con vos y recordarte lo especial que sos para mí.
+
+Ojalá pudiera darte un abrazo ahora mismo y decirte todo esto mirándote a los ojos. Mientras tanto, hice este pequeño rinconcito para vos, con mucho cariño y con la ilusión de que te saque una sonrisa.
+
+Gracias por llegar a mi vida, mi princesa. 🌷❤️`;
+
+const razones = [
+  "Me encanta poder llamarte mi princesa. 👑",
+  "Quiero conocer todas esas pequeñas cosas que te hacen ser vos. 🌷",
+  "Me hace feliz imaginar tu sonrisa. 💗",
+  "Quiero compartir muchos recuerdos bonitos con vos. ✨",
+  "Aunque estemos lejos, me gusta encontrar formas de estar presente. ❤️",
+  "Quiero cuidar este comienzo tan lindo que tenemos. 💌",
+  "Espero poder darte muchos abrazos en persona algún día. 🫂"
+];
+
+let indice = 0;
+let cartaAbierta = false;
+
+function abrirCarta() {
+  document.getElementById("cartaCaja").classList.remove("oculto");
+
+  if (!cartaAbierta) {
+    document.getElementById("cartaTexto").textContent = carta;
+    cartaAbierta = true;
+  }
+
+  document.getElementById("cartaCaja").scrollIntoView({
+    behavior: "smooth",
+    block: "center"
+  });
+
+  corazones();
+}
+
+function otraRazon() {
+  document.getElementById("razon").textContent = razones[indice];
+  indice = (indice + 1) % razones.length;
+  corazones();
+}
+
+function finalSorpresa() {
+  document.getElementById("mensajeFinal").classList.remove("oculto");
+  document.getElementById("mensajeFinal").scrollIntoView({
+    behavior: "smooth",
+    block: "center"
+  });
+  corazones();
+}
+
+function corazones() {
+  for (let i = 0; i < 12; i++) {
+    setTimeout(() => {
+      const flor = document.createElement("div");
+      flor.className = "flotante";
+      flor.textContent = ["💗", "💕", "🌸", "✨", "🌹"][
+        Math.floor(Math.random() * 5)
+      ];
+      flor.style.left = Math.random() * 100 + "vw";
+      flor.style.fontSize = (18 + Math.random() * 20) + "px";
+      document.body.appendChild(flor);
+      setTimeout(() => flor.remove(), 7000);
+    }, i * 120);
+  }
+}
+
+setInterval(() => {
+  const flor = document.createElement("div");
+  flor.className = "flotante";
+  flor.textContent = ["💗", "🌸", "💕"][
+    Math.floor(Math.random() * 3)
+  ];
+  flor.style.left = Math.random() * 100 + "vw";
+  flor.style.fontSize = "22px";
+  document.body.appendChild(flor);
+  setTimeout(() => flor.remove(), 7000);
+}, 1100);
+</script>
+
+</body>
+</html>
