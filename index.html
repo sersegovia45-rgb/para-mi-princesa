@@ -1,42 +1,47 @@
-<!DOCTYPE html>
-<html lang="es">
+<!DOCTYPE html><html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Para mi princesa 💗</title>
-
-<style>
-* {
-  box-sizing: border-box;
-}
+<title>Para mi princesa 💎</title><style>
+* { box-sizing: border-box; }
 
 body {
   margin: 0;
   min-height: 100vh;
   font-family: Georgia, serif;
-  color: white;
+  color: #fff8e8;
   text-align: center;
   background:
-    linear-gradient(rgba(20, 8, 12, .40), rgba(45, 15, 20, .50)),
+    linear-gradient(rgba(12, 8, 15, .72), rgba(30, 12, 22, .80)),
     url("https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=1600&q=90")
     center center / cover fixed;
+  background-color: #170d15;
+  overflow-x: hidden;
+}
 
 .contenido {
-  max-width: 520px;
+  max-width: 540px;
   margin: auto;
-  padding: 35px 18px;
+  padding: 32px 18px 100px;
   position: relative;
   z-index: 2;
 }
 
+.corona {
+  font-size: 42px;
+  color: #f9d779;
+  text-shadow: 0 0 20px #e6bd68;
+}
+
 h1 {
-  font-size: 38px;
-  color: #fff0f7;
-  text-shadow: 0 0 18px #ff69b4;
+  font-size: clamp(32px, 8vw, 44px);
+  color: #ffe5a0;
+  text-shadow: 0 0 18px #c58a28;
 }
 
 h2 {
-  color: #ffe3f0;
+  color: #ffe3a6;
+  text-shadow: 0 0 10px #b98135;
 }
 
 .subtitulo {
@@ -45,35 +50,33 @@ h2 {
 }
 
 button {
-  background: #ff4f9a;
-  color: white;
-  border: 1px solid #ffc4df;
+  background: linear-gradient(135deg, #ffe8a3, #c58a28);
+  color: #351323;
+  border: 1px solid #fff0c2;
   border-radius: 30px;
-  padding: 14px 22px;
+  padding: 14px 20px;
   margin: 10px 4px;
-  font-size: 16px;
-  box-shadow: 0 0 18px #ff69b4a0;
+  font-family: Georgia, serif;
+  font-size: 15px;
+  font-weight: bold;
+  box-shadow: 0 0 18px #d7a84c66;
   cursor: pointer;
 }
 
-button:active {
-  transform: scale(.96);
-}
+button:active { transform: scale(.96); }
 
 .tarjeta {
-  background: rgba(255, 190, 220, .22);
-  border: 1px solid rgba(255, 225, 240, .8);
+  background: rgba(37, 20, 32, .72);
+  border: 1px solid rgba(255, 220, 145, .78);
   border-radius: 24px;
   padding: 22px 17px;
   margin: 24px 0;
-  backdrop-filter: blur(9px);
-  -webkit-backdrop-filter: blur(9px);
-  box-shadow: 0 8px 25px #69002e55;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 8px 28px #0008, 0 0 16px #d7a84c20;
 }
 
-.oculto {
-  display: none;
-}
+.oculto { display: none; }
 
 .carta {
   white-space: pre-line;
@@ -87,6 +90,7 @@ button:active {
   display: inline-block;
   animation: latido 1.2s infinite;
   cursor: pointer;
+  filter: drop-shadow(0 0 12px #e8b9ce);
 }
 
 @keyframes latido {
@@ -97,8 +101,9 @@ button:active {
   position: fixed;
   bottom: -45px;
   pointer-events: none;
-  z-index: 1;
-  animation: subir 7s linear forwards;
+  z-index: 5;
+  animation: subir 8s linear forwards;
+  filter: drop-shadow(0 0 6px #f4d27a);
 }
 
 @keyframes subir {
@@ -111,63 +116,60 @@ button:active {
 .pie {
   margin-top: 32px;
   font-style: italic;
-  color: #ffe1ef;
+  color: #ffe5b4;
 }
 
-</style>
-</head>
+#musicButton {
+  position: fixed;
+  bottom: 18px;
+  right: 12px;
+  z-index: 10000;
+  padding: 13px 16px;
+  margin: 0;
+  border: 1px solid #fff0c2;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #ffe8a3, #c58a28);
+  color: #351323;
+  font-size: 13px;
+  box-shadow: 0 0 18px #e6bd68aa;
+}
 
-<body>
-
-<main class="contenido">
-
-  <div style="font-size:42px">♡ 👑 ♡</div>
-
-  <h1>Para mi princesa</h1>
-
-  <p class="subtitulo">
+@media (max-width: 380px) {
+  #musicButton {
+    font-size: 12px;
+    padding: 11px 13px;
+  }
+}
+</style></head><body><main class="contenido">  <div class="corona">✧ ♡ 👑 ♡ ✧</div>  <h1>Para mi princesa 💎</h1>  <p class="subtitulo">
     Hice algo especial para vos, mi Linda. 💗
-  </p>
-
-  <p>
+  </p>  <p>
     No es un regalo que puedas tocar,
-    pero está hecho con muchísimo cariño.
-  </p>
-
-  <button onclick="abrirCarta()">
-    💌 Abrí tu sorpresa
-  </button>
+    pero está hecho con muchísimo cariño. ✨
+  </p><button onclick="abrirCarta()">💌 Abrí tu sorpresa</button>
 
   <section id="cartaCaja" class="tarjeta oculto">
     <h2>Una cartita para vos 💌</h2>
     <div id="cartaTexto" class="carta"></div>
-  </section>
-
-  <section class="tarjeta">
+  </section>  <section class="tarjeta">
     <h2>Razones para sonreír 🌷</h2>
     <p id="razon">Tengo algunas cositas lindas para recordarte. 💗</p>
     <button onclick="otraRazon()">Descubrir una razón 💕</button>
-  </section>
+  </section>  <section class="tarjeta">
+    <h2>Un último regalito... 💎</h2>
+    <p>Tocá el corazón, mi princesa.</p><div class="corazon" onclick="finalSorpresa()">❤️</div>
 
-  <section class="tarjeta">
-    <h2>Un último regalito...</h2>
-    <p>Tocá el corazón, mi princesa.</p>
+<p id="mensajeFinal" class="oculto">
+  Si pudiera elegir un lugar favorito en el mundo,
+  elegiría estar a tu lado.
 
-    <div class="corazon" onclick="finalSorpresa()">❤️</div>
+  Te quiero, mi princesa. 💗
 
-    <p id="mensajeFinal" class="oculto">
-      Si pudiera elegir un lugar favorito en el mundo,
-      elegiría estar a tu lado.
+  Gracias por hacer tan bonito este comienzo. 🌹
+</p>
 
-      Te quiero, mi princesa. 💗
-
-      Gracias por hacer tan bonito este comienzo. 🌹
-    </p>
-  </section>
-
-  <p class="pie">Hecho especialmente para vos, Linda. ♡</p>
-
-</main>
+  </section>  <p class="pie">Hecho especialmente para vos, Linda. ♡</p></main><audio id="romanticPiano" loop preload="none">
+  <source src="paulyudin-piano-romantic-157974.mp3" type="audio/mpeg">
+</audio><button id="musicButton" type="button">🎹 Reproducir música</button>
 
 <script>
 const carta = `Para mi princesa. 💗
@@ -227,149 +229,41 @@ function finalSorpresa() {
 function corazones() {
   for (let i = 0; i < 12; i++) {
     setTimeout(() => {
-      const flor = document.createElement("div");
-      flor.className = "flotante";
-      flor.textContent = ["💗", "💕", "🌸", "✨", "🌹"][
-        Math.floor(Math.random() * 5)
-      ];
-      flor.style.left = Math.random() * 100 + "vw";
-      flor.style.fontSize = (18 + Math.random() * 20) + "px";
-      document.body.appendChild(flor);
-      setTimeout(() => flor.remove(), 7000);
-    }, i * 120);
+      crearFlotante();
+    }, i * 150);
   }
 }
 
-setInterval(() => {
+function crearFlotante() {
   const flor = document.createElement("div");
   flor.className = "flotante";
-  flor.textContent = ["💗", "🌸", "💕"][
-    Math.floor(Math.random() * 3)
+  flor.textContent = ["💗", "💕", "🌸", "✨", "🌹", "💛"][
+    Math.floor(Math.random() * 6)
   ];
-  flor.style.left = Math.random() * 100 + "vw";
-  flor.style.fontSize = "22px";
+  flor.style.left = Math.random() * 95 + "vw";
+  flor.style.fontSize = (18 + Math.random() * 20) + "px";
   document.body.appendChild(flor);
-  setTimeout(() => flor.remove(), 7000);
-}, 1100);
-</script>
-<style>
-.floating-love {
-  position: fixed;
-  bottom: -50px;
-  z-index: 9999;
-  pointer-events: none;
-  animation: floatLove 8s linear forwards;
-  filter: drop-shadow(0 0 6px #ffd700);
+  setTimeout(() => flor.remove(), 8500);
 }
 
-@keyframes floatLove {
-  0% {
-    transform: translateY(0) rotate(0deg) scale(.8);
-    opacity: 0;
-  }
-  15% {
-    opacity: 1;
-  }
-  85% {
-    opacity: .9;
-  }
-  100% {
-    transform: translateY(-115vh) rotate(360deg) scale(1.3);
-    opacity: 0;
-  }
-}
-</style><script>
-(function () {
-  const symbols = ["💖", "💕", "💗", "🌹", "🌸", "✨", "💛"];
+setInterval(crearFlotante, 850);
 
-  function createFloatingLove() {
-    const item = document.createElement("span");
-    item.className = "floating-love";
-    item.textContent =
-      symbols[Math.floor(Math.random() * symbols.length)];
+const music = document.getElementById("romanticPiano");
+const musicButton = document.getElementById("musicButton");
 
-    item.style.left = Math.random() * 95 + "vw";
-    item.style.fontSize = (16 + Math.random() * 18) + "px";
-    item.style.animationDuration = (7 + Math.random() * 5) + "s";
-
-    document.body.appendChild(item);
-
-    setTimeout(() => item.remove(), 13000);
-  }
-
-  setInterval(createFloatingLove, 650);
-})();
-</script>
-  <style>
-#musicButton {
-  position: fixed;
-  bottom: 20px;
-  right: 16px;
-  z-index: 10000;
-  padding: 13px 18px;
-  border: 1px solid #ffe6a0;
-  border-radius: 30px;
-  background: linear-gradient(135deg, #ffe8a3, #c58a28);
-  color: #4b1730;
-  font-size: 14px;
-  font-weight: bold;
-  box-shadow: 0 0 18px #e6bd68;
-  cursor: pointer;
-}
-</style><audio id="romanticPiano" loop preload="none">
-  <source src="paulyudin-piano-romantic-157974.mp3" type="audio/mpeg">
-
-<script>
-(function () {
-  const music = document.getElementById("romanticPiano");
-  const button = document.getElementById("musicButton");
-
-  button.addEventListener("click", async function () {
-    if (music.paused) {
-      try {
-        await music.play();
-        button.textContent = "⏸️ Pausar música";
-      } catch (error) {
-        button.textContent = "🎵 Intentar reproducir";
-        alert("No se pudo cargar la música. Revisá tu conexión e intentá nuevamente.");
-      }
-    } else {
-      music.pause();
-      button.textContent = "🎹 Reproducir música";
+musicButton.addEventListener("click", async function () {
+  if (music.paused) {
+    try {
+      await music.play();
+      musicButton.textContent = "⏸️ Pausar música";
+    } catch (error) {
+      musicButton.textContent = "🎹 Intentar otra vez";
+      alert("No se pudo reproducir el piano. Comprobá que el archivo MP3 esté junto a index.html y que el nombre coincida exactamente.");
     }
-  });
-
-  music.addEventListener("ended", function () {
-    button.textContent = "🎹 Reproducir música";
-  });
-})();
-</script>
-  <audio id="romanticPiano" loop preload="none">
-  <source src="paulyudin-piano-romantic-157974.mp3" type="audio/mpeg">
-</audio><button id="musicButton" type="button"
-style="position:fixed;bottom:20px;right:16px;z-index:10000;padding:14px 18px;border:1px solid #ffe6a0;border-radius:30px;background:linear-gradient(135deg,#ffe8a3,#c58a28);color:#4b1730;font-weight:bold;box-shadow:0 0 18px #e6bd68;">
-🎹 Reproducir música
-</button>
-
-<script>
-(function () {
-  const music = document.getElementById("romanticPiano");
-  const button = document.getElementById("musicButton");
-
-  button.addEventListener("click", async function () {
-    if (music.paused) {
-      try {
-        await music.play();
-        button.textContent = "⏸️ Pausar música";
-      } catch (error) {
-        alert("No se pudo reproducir la música. Vamos a revisar el archivo.");
-      }
-    } else {
-      music.pause();
-      button.textContent = "🎹 Reproducir música";
-    }
-  });
-})();
-</script>
-</body>
+  } else {
+    music.pause();
+    musicButton.textContent = "🎹 Reproducir música";
+  }
+});
+</script></body>
 </html>
