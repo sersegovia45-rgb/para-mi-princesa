@@ -344,5 +344,32 @@ setInterval(() => {
   });
 })();
 </script>
+  <audio id="romanticPiano" loop preload="none">
+  <source src="paulyudin-piano-romantic-157974.mp3" type="audio/mpeg">
+</audio><button id="musicButton" type="button"
+style="position:fixed;bottom:20px;right:16px;z-index:10000;padding:14px 18px;border:1px solid #ffe6a0;border-radius:30px;background:linear-gradient(135deg,#ffe8a3,#c58a28);color:#4b1730;font-weight:bold;box-shadow:0 0 18px #e6bd68;">
+🎹 Reproducir música
+</button>
+
+<script>
+(function () {
+  const music = document.getElementById("romanticPiano");
+  const button = document.getElementById("musicButton");
+
+  button.addEventListener("click", async function () {
+    if (music.paused) {
+      try {
+        await music.play();
+        button.textContent = "⏸️ Pausar música";
+      } catch (error) {
+        alert("No se pudo reproducir la música. Vamos a revisar el archivo.");
+      }
+    } else {
+      music.pause();
+      button.textContent = "🎹 Reproducir música";
+    }
+  });
+})();
+</script>
 </body>
 </html>
